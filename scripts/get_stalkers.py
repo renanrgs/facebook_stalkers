@@ -19,6 +19,5 @@ data = {
 response = requests.post('https://www.facebook.com/login/', cookies=cookies, headers=headers, data=data)
 stalkers = re.findall('"buddy_id":"(\\d*)".*?"name":(".*?")', str(response.content))
 
-for stalker in stalkers:
-    print(f'{stalker[1]} - https://www.facebook.com/{stalker[0]}')
-
+for stalker_id, stalker_name in stalkers:
+    print(f'{stalker_name} - https://www.facebook.com/{stalker_id}')
