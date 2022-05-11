@@ -3,7 +3,7 @@ import re
 import os
 
 
-def main():
+def get_stalkers():
     cookies = {
         'datr': os.environ.get('FACEBOOK_DATR')
     }
@@ -26,4 +26,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    get_stalkers()
