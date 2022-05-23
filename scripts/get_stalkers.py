@@ -5,17 +5,18 @@ import os
 
 def get_stalkers():
     cookies = {
-        'datr': os.environ.get('FACEBOOK_DATR')
+        'c_user': os.environ['FACEBOOK_USER_ID'],
+        'xs': os.environ['FACEBOOK_XS'],
     }
 
     headers = {
-        'accept': os.environ.get('FACEBOOK_ACCEPT')
+        'accept': os.environ['FACEBOOK_ACCEPT']
     }
 
     data = {
-        'lsd': os.environ.get('FACEBOOK_LSD'),
-        'email': os.environ.get('EMAIL'),
-        'encpass': os.environ.get('FACEBOOK_ENCPASS')
+        'lsd': os.environ['FACEBOOK_LSD'],
+        'email': os.environ['EMAIL'],
+        'encpass': os.environ['FACEBOOK_ENCPASS']
     }
 
     response = requests.post('https://www.facebook.com/login/', cookies=cookies, headers=headers, data=data)
